@@ -20,6 +20,8 @@ public class Frieren implements ModInitializer {
 		// Proceed with mild caution.
 		ModItems.initialize();
 
+		ModComponents.initialize();
+
 		LOGGER.info("Hello Fabric world!");
 
 	}

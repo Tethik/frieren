@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "frieren:item/ring_of_bonded_location"
+  }
+}

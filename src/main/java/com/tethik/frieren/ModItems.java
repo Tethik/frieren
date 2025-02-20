@@ -2,6 +2,7 @@ package com.tethik.frieren;
 
 import com.tethik.frieren.item.EndlessBucket;
 import com.tethik.frieren.item.EndlessBucketBehaviourRegister;
+import com.tethik.frieren.item.RingOfBondedLocation;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
@@ -47,6 +48,16 @@ public class ModItems {
             ENDLESS_BUCKET_KEY
     );
 
+    public static final RegistryKey<Item> RING_OF_BONDED_LOCATION_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Frieren.MOD_ID, "ring_of_bonded_location"));
+    public static final Item RING_OF_BONDED_LOCATION = register(
+            new RingOfBondedLocation(new Item.Settings().
+                    registryKey(ModItems.RING_OF_BONDED_LOCATION_KEY).
+                    rarity(Rarity.RARE).
+                    maxCount(1).
+                    useCooldown(30)),
+            RING_OF_BONDED_LOCATION_KEY
+    );
+
     public static void initialize() {
         // Endless Bucket
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
@@ -63,6 +74,10 @@ public class ModItems {
         // Endless Water Bucket
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
             .register((itemGroup) -> itemGroup.add(ModItems.ENDLESS_WATER_BUCKET));
+
+        // Ring
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
+                .register((itemGroup) -> itemGroup.add(ModItems.RING_OF_BONDED_LOCATION));
 
         EndlessBucketBehaviourRegister.registerBucketBehavior();
         EndlessBucketBehaviourRegister.registerDispenserBehavior();

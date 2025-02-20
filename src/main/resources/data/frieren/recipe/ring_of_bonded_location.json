@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:amethyst_shard",
+    "g": "minecraft:gold_ingot"
+  },
+  "pattern": [
+    " # ",
+    "gg ",
+    "gg "
+  ],
+  "result": {
+    "count": 1,
+    "id": "frieren:ring_of_bonded_location"
+  }
+}
