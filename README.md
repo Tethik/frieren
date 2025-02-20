@@ -11,10 +11,9 @@ Forever Bucket
 * [x] endless water bucket
 * [x] endless empty bucket
 * [] no fish bucket
-* [] crafting recipe (unsure)
-	* Heart of the sea
-	* Nether star?
-
+* [*] crafting recipe (unsure)
+	* Heart of the sea for water
+	* Nether star for others (could be better)
 * [x] dungeon loot 
 	* Lava from bastion
 	* Water from jungle
