@@ -133,8 +133,6 @@ public class EndlessBucketBehaviourRegister {
     }
 
     public static void registerChestLoot() {
-
-
         LootTableEvents.MODIFY.register((key, builder, source, lookup) -> {
 //            RegistryKey<LootTable> coalKey = Blocks.COAL_ORE.getLootTableKey().get();
 //            if (source.isBuiltin() && coalKey.equals(key)) {

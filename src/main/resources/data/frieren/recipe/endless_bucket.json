@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:bucket",
+    "minecraft:nether_star"
+  ],
+  "result": {
+    "id": "frieren:endless_bucket",
+    "count": 1
+  }
+}

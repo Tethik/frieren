@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:water_bucket",
+    "minecraft:heart_of_the_sea"
+  ],
+  "result": {
+    "id": "frieren:endless_water_bucket",
+    "count": 1
+  }
+}
