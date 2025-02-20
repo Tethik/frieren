@@ -11,9 +11,25 @@ Forever Bucket
 * [x] endless water bucket
 * [x] endless empty bucket
 * [] no fish bucket
+* [] crafting recipe (unsure)
+	* Heart of the sea
+	* Nether star?
+
+* [x] dungeon loot 
+	* Lava from bastion
+	* Water from jungle
+	* Empty from desert
 
 air boost?
 
-teleport ring
+friend-teleport ring
+* 
 
+Gems
+* worldgen
+* different elemental aspects
+*
+
+Configurable
+* Control which items are added 
 

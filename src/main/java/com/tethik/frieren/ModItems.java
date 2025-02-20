@@ -68,18 +68,25 @@ public class ModItems {
             builder.add(ModItems.SUSPICIOUS_SUBSTANCE, 2 * 20);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+        // Endless Bucket
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
+                .register((itemGroup) -> itemGroup.add(ModItems.ENDLESS_BUCKET));
+
+        // Endless Lava Bucket
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
                 .register((itemGroup) -> itemGroup.add(ModItems.ENDLESS_LAVA_BUCKET));
 
         FuelRegistryEvents.BUILD.register((builder, context) -> {
             builder.add(ModItems.ENDLESS_LAVA_BUCKET, 30 * 20);
         });
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
+        // Endless Water Bucket
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)
             .register((itemGroup) -> itemGroup.add(ModItems.ENDLESS_WATER_BUCKET));
 
         EndlessBucketBehaviourRegister.registerBucketBehavior();
         EndlessBucketBehaviourRegister.registerDispenserBehavior();
+        EndlessBucketBehaviourRegister.registerChestLoot();
     }
 
     public static Item register(Item item, RegistryKey<Item> registryKey) {

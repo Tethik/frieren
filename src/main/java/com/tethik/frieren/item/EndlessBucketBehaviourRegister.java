@@ -1,6 +1,7 @@
 package com.tethik.frieren.item;
 
 import com.tethik.frieren.ModItems;
+import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.cauldron.CauldronBehavior;
 import net.minecraft.block.dispenser.DispenserBehavior;
@@ -12,6 +13,16 @@ import net.minecraft.fluid.Fluids;
 import net.minecraft.item.FluidModificationItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.loot.LootPool;
+import net.minecraft.loot.LootTable;
+import net.minecraft.loot.LootTables;
+import net.minecraft.loot.context.LootContext;
+import net.minecraft.loot.entry.EmptyEntry;
+import net.minecraft.loot.entry.ItemEntry;
+import net.minecraft.loot.provider.number.LootNumberProvider;
+import net.minecraft.loot.provider.number.LootNumberProviderType;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.tag.FluidTags;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
@@ -19,10 +30,8 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.stat.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPointer;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 
@@ -121,5 +130,58 @@ public class EndlessBucketBehaviourRegister {
 
     private static ActionResult tryEmpty(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, ItemStack stack) {
         return emptyCauldron(state, world, pos, player, stack);
+    }
+
+    public static void registerChestLoot() {
+
+
+        LootTableEvents.MODIFY.register((key, builder, source, lookup) -> {
+//            RegistryKey<LootTable> coalKey = Blocks.COAL_ORE.getLootTableKey().get();
+//            if (source.isBuiltin() && coalKey.equals(key)) {
+//                LootPool.Builder poolBuilder = LootPool.builder()
+//                        .with(ItemEntry.builder(ModItems.ENDLESS_BUCKET).weight(1))
+//                        .with(EmptyEntry.builder().weight(5));
+//
+//                builder.pool(poolBuilder);
+//            }
+
+            // Endless Bucket (almost) guaranteed form Desert Pyramid
+            if (source.isBuiltin() && key.equals(LootTables.DESERT_PYRAMID_CHEST)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.ENDLESS_BUCKET))
+                        .with(EmptyEntry.builder());;
+
+                builder.pool(poolBuilder);
+            }
+            // Endless Water Bucket from Jungle Temple - guaranteed
+            if (source.isBuiltin() && key.equals(LootTables.JUNGLE_TEMPLE_CHEST)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.ENDLESS_WATER_BUCKET));
+
+                builder.pool(poolBuilder);
+            }
+
+            // Endless Lava Bucket from bastions - guaranteed from treasure chest, others have a low chance.
+            if (source.isBuiltin() && key.equals(LootTables.BASTION_TREASURE_CHEST)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.ENDLESS_LAVA_BUCKET));
+
+                builder.pool(poolBuilder);
+            }
+            if (source.isBuiltin() && key.equals(LootTables.BASTION_BRIDGE_CHEST)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.ENDLESS_LAVA_BUCKET))
+                        .with(EmptyEntry.builder().weight(10));
+
+                builder.pool(poolBuilder);
+            }
+            if (source.isBuiltin() && key.equals(LootTables.BASTION_OTHER_CHEST)) {
+                LootPool.Builder poolBuilder = LootPool.builder()
+                        .with(ItemEntry.builder(ModItems.ENDLESS_LAVA_BUCKET))
+                        .with(EmptyEntry.builder().weight(20));
+
+                builder.pool(poolBuilder);
+            }
+        });
     }
 }
