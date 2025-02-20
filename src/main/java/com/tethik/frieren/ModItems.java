@@ -1,6 +1,7 @@
 package com.tethik.frieren;
 
 import com.tethik.frieren.item.EndlessBucket;
+import com.tethik.frieren.item.EndlessBucketBehaviourRegister;
 import com.tethik.frieren.item.SuspiciousSubstance;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
@@ -43,6 +44,16 @@ public class ModItems {
             ENDLESS_WATER_BUCKET_KEY
     );
 
+    public static final RegistryKey<Item> ENDLESS_BUCKET_KEY = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(Frieren.MOD_ID, "endless_bucket"));
+    public static final Item ENDLESS_BUCKET = register(
+            new EndlessBucket(Fluids.EMPTY, new Item.Settings().
+                    registryKey(ModItems.ENDLESS_BUCKET_KEY).
+                    fireproof().
+                    rarity(Rarity.RARE).
+                    maxCount(1)),
+            ENDLESS_BUCKET_KEY
+    );
+
     public static void initialize() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
                 .register((itemGroup) -> itemGroup.add(ModItems.SUSPICIOUS_SUBSTANCE));
@@ -67,7 +78,8 @@ public class ModItems {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS)
             .register((itemGroup) -> itemGroup.add(ModItems.ENDLESS_WATER_BUCKET));
 
-        EndlessBucket.registerBucketBehavior();
+        EndlessBucketBehaviourRegister.registerBucketBehavior();
+        EndlessBucketBehaviourRegister.registerDispenserBehavior();
     }
 
     public static Item register(Item item, RegistryKey<Item> registryKey) {
