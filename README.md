@@ -7,11 +7,11 @@ Forever Bucket
 * [x] endless furnace
 * [x] placing lava
 * [x] dispenser
-* [*] cauldron
+* [x] cauldron
 * [x] endless water bucket
 * [x] endless empty bucket
-* [] no fish bucket
-* [*] crafting recipe (unsure)
+* [ ] no fish bucket
+* [x] crafting recipe (unsure)
 	* Heart of the sea for water
 	* Nether star for others (could be better)
 * [x] dungeon loot 
@@ -19,10 +19,10 @@ Forever Bucket
 	* Water from jungle
 	* Empty from desert
 
-air boost?
+air boost item of some kind?
 
-friend-teleport ring
-* 
+* [x] friend-teleport ring
+
 
 Gems
 * worldgen
