@@ -10,7 +10,7 @@ Forever Bucket
 * [x] cauldron
 * [x] endless water bucket
 * [x] endless empty bucket
-* [ ] no fish bucket
+	* [ ] no fish bucket
 * [x] crafting recipe (unsure)
 	* Heart of the sea for water
 	* Nether star for others (could be better)
@@ -28,6 +28,15 @@ Gems
 * worldgen
 * different elemental aspects
 *
+
+QoL
+* [x] Cobblestone -> Gravel -> Sand result
+* [x] Easier lodestone
+
+Gameplay changes:
+* [ ] Growth only in original climate/biomes
+* [ ] Limited mobspawning in sun/moonlight
+* [ ] More geodes
 
 Configurable
 * Control which items are added 
