@@ -54,7 +54,7 @@ public class ModItems {
                     registryKey(ModItems.RING_OF_BONDED_LOCATION_KEY).
                     rarity(Rarity.RARE).
                     maxCount(1).
-                    useCooldown(30)),
+                    useCooldown(30 * 60)),
             RING_OF_BONDED_LOCATION_KEY
     );
 

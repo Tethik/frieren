@@ -50,10 +50,12 @@ public class RingOfBondedLocation extends Item {
             } else {
                 user.sendMessage(Text.literal("You cannot teleport to yourself").formatted(Formatting.BLUE), false);
                 world.playSound(null, BlockPos.ofFloored(user.getPos()), SoundEvents.ENTITY_VEX_CHARGE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+                return ActionResult.FAIL;
             }
         } else {
             user.sendMessage(Text.literal("Entity not available").formatted(Formatting.BLUE), false);
             world.playSound(null, BlockPos.ofFloored(user.getPos()), SoundEvents.ENTITY_VEX_CHARGE, SoundCategory.PLAYERS, 1.0F, 1.0F);
+            return ActionResult.FAIL;
         }
 
         return ActionResult.SUCCESS;
