@@ -3,9 +3,9 @@
 	"id": "frieren",
 	"version": "${version}",
 	"name": "frieren",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Quality of Life and Magic with no real goal",
 	"authors": [
-		"Me!"
+		"Tethik"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",

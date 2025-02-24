@@ -40,7 +40,7 @@ public class EndlessBucket extends BucketItem {
 
         // Don't return empty bucket, just the same item.
         ItemStack itemStack = user.getStackInHand(hand);
-        ItemStack itemStack2 = ItemUsage.exchangeStack(itemStack, user, new ItemStack(ModItems.ENDLESS_LAVA_BUCKET));
+        ItemStack itemStack2 = ItemUsage.exchangeStack(itemStack, user, new ItemStack(this));
         return ActionResult.SUCCESS.withNewHandStack(itemStack2);
     }
 

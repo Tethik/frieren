@@ -6,6 +6,7 @@ import com.tethik.frieren.item.RingOfBondedLocation;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -70,6 +71,8 @@ public class ModItems {
         FuelRegistryEvents.BUILD.register((builder, context) -> {
             builder.add(ModItems.ENDLESS_LAVA_BUCKET, 30 * 20);
         });
+
+        
 
         // Endless Water Bucket
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS)

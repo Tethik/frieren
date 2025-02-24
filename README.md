@@ -32,6 +32,8 @@ Gems
 QoL
 * [x] Cobblestone -> Gravel -> Sand result
 * [x] Easier lodestone
+* [ ] remove mending, unbreakable 
+* [ ] no durability
 
 Gameplay changes:
 * [ ] Growth only in original climate/biomes
