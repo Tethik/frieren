@@ -3,11 +3,12 @@ https://docs.fabricmc.net/develop/items/custom-item-interactions
 
 # Ideas
 
-Forever Bucket
-* [x] endless furnace
-* [x] placing lava
-* [x] dispenser
-* [x] cauldron
+Endless  Bucket
+* [x] endless lava bucket
+	* [x] endless furnace
+	* [x] placing lava
+	* [x] dispenser
+	* [x] cauldron
 * [x] endless water bucket
 * [x] endless empty bucket
 	* [ ] no fish bucket
@@ -36,11 +37,30 @@ QoL
 * [x] Easier lodestone
 * [ ] remove mending, unbreakable 
 * [ ] no durability
+* [ ] no silk touch requirement for glass blocks
 
 Gameplay changes:
 * [ ] Growth only in original climate/biomes
-* [ ] Limited mobspawning in sun/moonlight
+* [x] Limited mobspawning in sun/moonlight
 * [ ] More geodes
+
+* [x] Basic Mana interactions
+	* [x] region based value
+	* [x] adding/decreasing on mob/player/village/cat death
+	* [ ] increase spawn rate at high values
+	* [ ] block to read mana 
+	* [ ] debug commands to set/read mana
+
+* [ ] Advanced Mana interactions
+	* [ ] chunkloader that consumes it
+	* [ ] worldgen sources (blocks, structures - e.g. pools)
+	* [ ] channeling mana
+	* [ ] overflowing/spreading mana between regions
+	* [ ] different types of mana
+	* [ ] charging gems by dipping into mana
+	* [ ] weather events affecting mana
+	* [ ] "good" mana evaporating in physical form
+	* [ ] ... generally stuff that consumes mana
 
 Configurable
 * Control which items are added 

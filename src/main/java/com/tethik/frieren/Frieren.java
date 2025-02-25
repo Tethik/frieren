@@ -1,5 +1,6 @@
 package com.tethik.frieren;
 
+import com.tethik.frieren.gameplay.OverworldSpawnRestriction;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -21,6 +22,8 @@ public class Frieren implements ModInitializer {
 		ModItems.initialize();
 
 		ModComponents.initialize();
+
+		OverworldSpawnRestriction.initialize();
 
 		LOGGER.info("Hello Fabric world!");
 
