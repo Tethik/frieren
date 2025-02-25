@@ -2,8 +2,17 @@ package com.tethik.frieren;
 
 import com.tethik.frieren.gameplay.GlassBlockWithoutSilkTouch;
 import com.tethik.frieren.gameplay.OverworldSpawnRestriction;
+import com.tethik.frieren.gameplay.WorldMana;
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.server.command.CommandManager;
+import net.minecraft.text.Text;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
+import net.minecraft.world.World;
+import net.minecraft.world.chunk.Chunk;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -21,11 +30,13 @@ public class Frieren implements ModInitializer {
 		// However, some things (like resources) may still be uninitialized.
 		// Proceed with mild caution.
 		ModItems.initialize();
-
 		ModComponents.initialize();
+		ModCommands.initialize();
 
 		OverworldSpawnRestriction.initialize();
 		GlassBlockWithoutSilkTouch.initialize();
+
+
 
 		LOGGER.info("Hello Fabric world!");
 

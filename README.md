@@ -27,6 +27,8 @@ air boost item of some kind?
 * [ ] friend-compass?
 
 * [ ] Block-Breaking-Block
+* [ ] Turrets
+* 
 
 
 Gems
@@ -50,7 +52,7 @@ Gameplay changes:
 	* [x] region based value
 	* [x] adding/decreasing on mob/player/village/cat death
 	* [ ] increase spawn rate at high values
-	* [ ] block to read mana 
+	* [ ] block to read mana (copper bulb reskin?)
 	* [ ] debug commands to set/read mana
 
 * [ ] Advanced Mana interactions

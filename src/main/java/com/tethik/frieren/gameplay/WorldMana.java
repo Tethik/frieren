@@ -4,6 +4,7 @@ import com.tethik.frieren.Frieren;
 import net.minecraft.nbt.*;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.PersistentState;
 import net.minecraft.world.PersistentStateManager;
@@ -22,15 +23,30 @@ public class WorldMana extends PersistentState {
         return regionManaValues.get(regionKey);
     }
 
+    protected Vec3i blockPosToVec3i(World world, BlockPos pos) {
+        int x = world.getChunk(pos).getPos().getRegionX();
+        int z = world.getChunk(pos).getPos().getRegionZ();
+        return new Vec3i(x, 0, z);
+    }
+
+    public int get(World world, BlockPos pos) {
+        return get(blockPosToVec3i(world, pos));
+    }
+
     public void add(Vec3i regionKey, int amount) {
         Frieren.LOGGER.info("Mana at region " + regionKey.toShortString() + " += " + amount);
-        int newMana = get(regionKey) + amount;
-        if (newMana < 0) {
-            newMana = 0;
-        } else if (newMana > 10000) {
-            newMana = 10000;
-        }
+        int newMana = Math.max(Math.min(get(regionKey) + amount, 10000), 0);
         regionManaValues.put(regionKey, newMana);
+    }
+
+    public int set(World world, BlockPos pos, int amount) {
+        return set(blockPosToVec3i(world, pos), amount);
+    }
+
+    public int set(Vec3i regionKey, int amount) {
+        int newMana = Math.max(Math.min(get(regionKey) + amount, 10000), 0);
+        regionManaValues.put(regionKey, newMana);
+        return newMana;
     }
 
     @Override
