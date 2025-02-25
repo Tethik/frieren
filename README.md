@@ -60,6 +60,7 @@ Gameplay changes:
 	* [ ] charging gems by dipping into mana
 	* [ ] weather events affecting mana
 	* [ ] "good" mana evaporating in physical form
+	* [ ] non-square based regions, following biomes?
 	* [ ] ... generally stuff that consumes mana
 
 Configurable
