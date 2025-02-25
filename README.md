@@ -23,6 +23,8 @@ air boost item of some kind?
 
 * [x] friend-teleport ring
 
+* [ ] friend-compass?
+
 
 Gems
 * worldgen
