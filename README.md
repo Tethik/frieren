@@ -26,6 +26,8 @@ air boost item of some kind?
 
 * [ ] friend-compass?
 
+* [ ] Block-Breaking-Block
+
 
 Gems
 * worldgen

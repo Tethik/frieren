@@ -15,8 +15,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Objects;
 
 @Mixin(HostileEntity.class)
 public class HostileEntitySpawnRestricter {
@@ -29,9 +28,10 @@ public class HostileEntitySpawnRestricter {
         Vec3i regionKey = new Vec3i(x, 0, z);
 
         if (dimensionType.hasSkyLight() && world.isSkyVisible(pos)) {
-            int mana = WorldMana.getMana(regionKey);
-            Frieren.LOGGER.debug("Mana at region " + regionKey.toShortString() + " = " + mana);
-            info.setReturnValue(WorldMana.getMana(regionKey) > 0);
+            WorldMana worldMana = WorldMana.getServerState(Objects.requireNonNull(world.getServer()));
+            int mana = worldMana.get(regionKey);
+            Frieren.LOGGER.info("Mana at region " + regionKey.toShortString() + " = " + mana);
+            info.setReturnValue(mana > 0);
         }
     }
 }
