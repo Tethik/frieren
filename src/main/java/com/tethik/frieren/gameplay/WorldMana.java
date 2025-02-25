@@ -16,14 +16,21 @@ public class WorldMana extends PersistentState {
 
     public int get(Vec3i regionKey) {
         if (!regionManaValues.containsKey(regionKey)) {
-            regionManaValues.put(regionKey, 1024); // TODO random default value
+            Random random = new Random();
+            regionManaValues.put(regionKey, random.nextInt(3000)); // TODO random default value
         }
         return regionManaValues.get(regionKey);
     }
 
     public void add(Vec3i regionKey, int amount) {
         Frieren.LOGGER.info("Mana at region " + regionKey.toShortString() + " += " + amount);
-        regionManaValues.put(regionKey, get(regionKey) + amount);
+        int newMana = get(regionKey) + amount;
+        if (newMana < 0) {
+            newMana = 0;
+        } else if (newMana > 10000) {
+            newMana = 10000;
+        }
+        regionManaValues.put(regionKey, newMana);
     }
 
     @Override
