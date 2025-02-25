@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WorldMana {
-    private static final Map<Vec3i, Integer> regionManaValues = new HashMap<>();
+    private static final Map<Vec3i, Integer> regionManaValues = new HashMap<>(); // needs permanent storage
 
     public static int getMana(Vec3i regionKey) {
         if (!regionManaValues.containsKey(regionKey)) {
@@ -22,13 +22,13 @@ public class WorldMana {
     }
 
     public static void add(Vec3i regionKey, int amount) {
-        Frieren.LOGGER.debug("Mana at region " + regionKey.toShortString() + " += " + amount);
+        Frieren.LOGGER.info("Mana at region " + regionKey.toShortString() + " += " + amount);
         regionManaValues.put(regionKey, getMana(regionKey) + amount);
     }
 
-    public static void onThreshold(BlockPos pos, World world) {
-        RegistryEntry<Biome> biome = world.getBiome(pos);
-        biome.value().getSpawnSettings().getCreatureSpawnProbability();
-    }
+//    public static void onThreshold(BlockPos pos, World world) {
+//        RegistryEntry<Biome> biome = world.getBiome(pos);
+//        biome.value().getSpawnSettings().getCreatureSpawnProbability();
+//    }
 
 }

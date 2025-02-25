@@ -1,5 +1,6 @@
 package com.tethik.frieren;
 
+import com.tethik.frieren.gameplay.GlassBlockWithoutSilkTouch;
 import com.tethik.frieren.gameplay.OverworldSpawnRestriction;
 import net.fabricmc.api.ModInitializer;
 
@@ -24,6 +25,7 @@ public class Frieren implements ModInitializer {
 		ModComponents.initialize();
 
 		OverworldSpawnRestriction.initialize();
+		GlassBlockWithoutSilkTouch.initialize();
 
 		LOGGER.info("Hello Fabric world!");
 

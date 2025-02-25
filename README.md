@@ -37,7 +37,7 @@ QoL
 * [x] Easier lodestone
 * [ ] remove mending, unbreakable 
 * [ ] no durability
-* [ ] no silk touch requirement for glass blocks
+* [x] no silk touch requirement for glass blocks
 
 Gameplay changes:
 * [ ] Growth only in original climate/biomes
@@ -63,6 +63,7 @@ Gameplay changes:
 	* [ ] non-square based regions, following biomes?
 	* [ ] ... generally stuff that consumes mana
 
-Configurable
-* Control which items are added 
+Configuration
+* [] Items added
+* [] Gameplay changes
 
